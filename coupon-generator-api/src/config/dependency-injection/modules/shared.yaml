@@ -1,0 +1,4 @@
+services:
+    Shared.Config:
+        class: ../../../modules/shared/infraestructure/Config
+        arguments: []

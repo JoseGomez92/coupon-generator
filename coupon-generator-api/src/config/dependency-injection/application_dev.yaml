@@ -1,0 +1,3 @@
+imports:
+    - { resource: ./modules/shared.yaml }
+    - { resource: ./modules/coupon.yaml }

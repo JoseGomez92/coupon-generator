@@ -1,0 +1,20 @@
+<div class="coupons-searcher-center">
+  <div class="coupons-form-margin">
+    <label>Number of Coupons to generate:</label>
+  </div>
+  <div class="coupons-form-margin">
+    <input
+      #amountToGenerate
+      (keyup.enter)="search()"
+      matInput
+      type="number"
+      placeholder="100"
+      [min]="minValue"
+      [max]="maxValue"
+      class="coupons-form-field"
+    />
+  </div>
+  <div class="coupons-form-margin">
+    <button (click)="search()" mat-raised-button>Generate</button>
+  </div>
+</div>

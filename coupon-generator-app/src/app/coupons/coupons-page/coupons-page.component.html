@@ -1,0 +1,11 @@
+<div class="app-page">
+  <div>
+    <h2 class="app-page-title">Coupons Generator</h2>
+  </div>
+  <div>
+    <app-searcher class="coupons-page-margin-item"></app-searcher>
+    <ng-template class="coupons-page-margin-item" [ngIf]="thereAreCoupons">
+      <app-list></app-list>
+    </ng-template>
+  </div>
+</div>

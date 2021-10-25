@@ -1,0 +1,18 @@
+services:
+    Coupon.Generator:
+        class: ../../../modules/coupon/application/CouponsGenerator
+        arguments: ['@Coupon.GeneratorStrategy']
+
+    Coupon.GeneratorStrategy:
+        class: ../../../modules/coupon/infraestructure/CouponGeneratorStrategy
+        arguments: ['!tagged couponsGenerator', '@Shared.Config']
+
+    Coupon.SequentialNumericGenerator:
+        class: ../../../modules/coupon/infraestructure/SequentialNumericCouponsGenerator
+        tags:
+            - { name: 'couponsGenerator' }
+
+    Coupon.SequentialUpperLettersGenerator:
+        class: ../../../modules/coupon/infraestructure/SequentialUpperLettersCouponsGenerator
+        tags:
+            - { name: 'couponsGenerator' }

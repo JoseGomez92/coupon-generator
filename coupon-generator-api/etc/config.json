@@ -1,0 +1,8 @@
+{
+    "server": {
+        "port": 3000
+    },
+    "coupon": {
+        "algorithm": "sequential_upper_letters"
+    }
+}

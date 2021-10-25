@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <mat-grid-list [cols]="cols" (window:resize)="onResize($event)">
+      <mat-grid-tile *ngFor="let coupon of coupons">
+        <app-coupon [coupon]="coupon"></app-coupon>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div>
+    <mat-paginator
+      [length]="numberOfCoupons"
+      [pageSize]="pageSize"
+      (page)="currentPage = $event"
+    >
+    </mat-paginator>
+  </div>
+</div>

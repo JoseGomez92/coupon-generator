@@ -1,0 +1,15 @@
+.dockerignore
+
+## Node
+node_modules
+
+## Git files and folders
+.git
+.gitignore
+
+## Dev files & folders
+.vscode
+.editorconfig
+karma.*
+readme*
+tsconfig.spec.json
