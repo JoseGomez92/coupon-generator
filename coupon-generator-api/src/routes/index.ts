@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import { router as healthRoutes } from './health-check.routes'
-import { router as couponRoutes } from './coupon.routes'
-
-const router: Router = Router()
+import { addRoutes as healthRoutes } from './health-check.routes'
+import { addRoutes as couponRoutes } from './coupon.routes'
 
 export const chargeRoutes = (app: any) => {
-    router.use(healthRoutes)
-    router.use(couponRoutes)
+    const router: Router = Router()
+
+    healthRoutes(router)
+    couponRoutes(router)
 
     app.use(router)
 }

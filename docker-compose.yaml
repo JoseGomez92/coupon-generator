@@ -13,7 +13,7 @@ services:
 
   coupon-generator-app:
     build: ./coupon-generator-app
-    image: coupon-generator-app
+    image: coupon-generator-app:1.0.0
     container_name: coupon-generator-app
     networks:
       - coupon-generator
