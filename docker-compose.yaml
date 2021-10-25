@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  coupon-generator-api:
+    build: ./coupon-generator-api
+    image: coupon-generator-api:1.0.0
+    container_name: coupon-generator-api
+    networks:
+      - coupon-generator
+    ports:
+      - 3000:3000
+    volumes:
+      - ./coupon-generator-api/etc/:/app/etc/
+
+  coupon-generator-app:
+    build: ./coupon-generator-app
+    image: coupon-generator-app
+    container_name: coupon-generator-app
+    networks:
+      - coupon-generator
+    ports:
+      - 80:80
+    environment:
+      - MODE=PROD
+      - API_URL=${API_URL}
+
+networks:
+  coupon-generator:
+    driver: bridge
